@@ -24,14 +24,8 @@ if (algorithm.ToLower() == "-des")
     // 检查输入文件是否存在
     if (File.Exists(inputFile))
     {
-        // 读取输入文件内容
-        string inputText = File.ReadAllText(inputFile);
-
         // 使用DES加密算法加密文件内容
-        string encryptedText = Des.EncryptText(inputText);
-
-        // 将加密后的内容写入输出文件
-        File.WriteAllText(outputFile, encryptedText);
+        Des.DesEncrypt(inputFile, outputFile);
 
         Console.WriteLine("File encrypted successfully.");
     }
@@ -84,12 +78,4 @@ if (algorithm.ToLower() == "-aes")
         Console.WriteLine("Input file does not exist.");
         return;
     }
-}
-else
-{
-    Console.WriteLine("Usage:");
-    Console.WriteLine("encrypt -des -file \"inputFilePath\" -output \"outputFilePath\"");
-    Console.WriteLine("encrypt -tdes -file \"inputFilePath\" -output \"outputFilePath\"");
-    Console.WriteLine("encrypt -aes -file \"inputFilePath\" -output \"outputFilePath\"");
-    return;
 }

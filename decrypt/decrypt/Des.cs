@@ -1,9 +1,9 @@
-﻿namespace encrypt.Encrypt
+﻿namespace decrypt.decrypt
 {
     internal class Des
     {
-        // 使用DES加密算法加密文件
-        public static void DesEncrypt(string inputFilePath, string outputFilePath)
+        // 使用DES加密算法解密文件
+        public static void DesDecrypt(string inputFilePath, string outputFilePath)
         {
             string key = "489cfsj3";
 
@@ -14,14 +14,14 @@
             using FileStream inputFileStream = new(inputFilePath, FileMode.Open, FileAccess.Read);
             using FileStream outputFileStream = new(outputFilePath, FileMode.Create, FileAccess.Write);
 
-            using CryptoStream cryptoStream = new(outputFileStream, des.CreateEncryptor(), CryptoStreamMode.Write);
+            using CryptoStream cryptoStream = new(inputFileStream, des.CreateDecryptor(), CryptoStreamMode.Read);
 
             byte[] buffer = new byte[4096];
             int bytesRead;
 
-            while ((bytesRead = inputFileStream.Read(buffer, 0, buffer.Length)) > 0)
+            while ((bytesRead = cryptoStream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                cryptoStream.Write(buffer, 0, bytesRead);
+                outputFileStream.Write(buffer, 0, bytesRead);
             }
         }
     }
