@@ -13,4 +13,10 @@
     <Description>DES/3DES/AES Encrypt</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="QingYi.Core" Version="1.0.0">
+      <Aliases></Aliases>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

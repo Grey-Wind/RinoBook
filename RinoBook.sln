@@ -13,6 +13,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "decrypt", "decrypt\decrypt.csproj", "{1AB0A35D-E8DE-4027-8029-FA86B3453389}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publishTest", "publishTest", "{834BE782-E738-4BAE-AB09-37576E544639}"
+	ProjectSection(SolutionItems) = preProject
+		publishTest\decrypt.exe = publishTest\decrypt.exe
+		publishTest\encrypt.exe = publishTest\encrypt.exe
+		publishTest\TestPic.jpg = publishTest\TestPic.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

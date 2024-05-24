@@ -42,14 +42,8 @@ if (algorithm.ToLower() == "-tdes")
     // 检查输入文件是否存在
     if (File.Exists(inputFile))
     {
-        // 读取输入文件内容
-        string inputText = File.ReadAllText(inputFile);
-
         // 使用DES加密算法加密文件内容
-        string encryptedText = TDes.TDesEncrypt(inputText);
-
-        // 将加密后的内容写入输出文件
-        File.WriteAllText(outputFile, encryptedText);
+        TDes.TDesEncrypt(inputFile, outputFile);
 
         Console.WriteLine("File encrypted successfully.");
     }
