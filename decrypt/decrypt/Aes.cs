@@ -8,20 +8,35 @@
         // 16 bytes long initialization vector
         private static readonly byte[] iv = Encoding.UTF8.GetBytes("5fr6rfuknf69g6fd");
 
-        public static string AesDecrypt(string cipherText)
+        public static void AesDecrypt(string inputFilePath, string outputFilePath)
         {
-            byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
-
             using AesManaged aesAlg = new();
             aesAlg.Key = key;
             aesAlg.IV = iv;
 
-            ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+            // Read the contents of the encrypted file
+            byte[] encryptedBytes = File.ReadAllBytes(inputFilePath);
 
-            using MemoryStream msDecrypt = new(cipherTextBytes);
+            // Create a MemoryStream to store the decrypted data
+            using MemoryStream msDecrypt = new(encryptedBytes);
+
+            // Create the decryptor to perform the stream transform
+            using ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+            // Create CryptoStream that transforms a stream using the decryption
             using CryptoStream csDecrypt = new(msDecrypt, decryptor, CryptoStreamMode.Read);
-            using StreamReader srDecrypt = new(csDecrypt);
-            return srDecrypt.ReadToEnd();
+
+            // Create a MemoryStream to store the decrypted bytes
+            using MemoryStream msDecrypted = new();
+
+            // Read the decrypted bytes from the CryptoStream
+            csDecrypt.CopyTo(msDecrypted);
+
+            // Get the decrypted bytes from the MemoryStream
+            byte[] decryptedBytes = msDecrypted.ToArray();
+
+            // Write the decrypted bytes to the output file
+            File.WriteAllBytes(outputFilePath, decryptedBytes);
         }
     }
 }

@@ -64,11 +64,7 @@ if (algorithm.ToLower() == "-aes")
 {
     if (File.Exists(inputFile))
     {
-        string inputText = File.ReadAllText(inputFile);
-
-        string encryptedText = Aes.AesDecrypt(inputText);
-
-        File.WriteAllText(outputFile, encryptedText);
+        Aes.AesDecrypt(inputFile, outputFile);
 
         Console.WriteLine("File encrypted successfully.");
     }
