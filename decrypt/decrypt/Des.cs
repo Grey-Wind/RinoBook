@@ -2,7 +2,7 @@
 {
     internal class Des
     {
-        // 使用DES加密算法解密文件
+        // 使用DES解密算法解密文件
         public static void DesDecrypt(string inputFilePath, string outputFilePath)
         {
             string key = "489cfsj3";
