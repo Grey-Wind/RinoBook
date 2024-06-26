@@ -1,6 +1,5 @@
 ﻿#include "Startup.h"
-
-#include <iostream>
+#include "Rino.h"
 
 int main(int argc, char* argv[])
 {

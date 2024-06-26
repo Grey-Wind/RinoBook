@@ -1,3 +1,3 @@
 #pragma once
 
-void SaveConfig(const std::string& filename);
+static void WriteDefaultConfig();
