@@ -13,10 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Config">
+      <UniqueIdentifier>{d5d0f2ed-4f28-4db3-804a-04a983aa308e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Rino.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>源文件\Config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Startup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Rino.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

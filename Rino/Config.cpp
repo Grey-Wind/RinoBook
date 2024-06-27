@@ -1,10 +1,4 @@
-﻿#include "Strings.h"
-
-#include <map>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
+#include "Startup.h"
 
 // 存储配置信息的map
 std::map<std::string, std::string> config;
@@ -49,21 +43,27 @@ static void LoadConfig(const std::string& filename) {
         }
     }
 
-    std::cout << "Config loaded from file: " << filename << std::endl;
+    // std::cout << "Config loaded from file: " << filename << std::endl;
 
     // 输出加载的配置信息（可选）
-    for (const auto& pair : config) {
-        std::cout << pair.first << " = " << pair.second << std::endl;
-    }
+    // for (const auto& pair : config) { std::cout << pair.first << " = " << pair.second << std::endl; }
 }
 
 // 写入默认配置
-static void WriteDefaultConfig() {
-    config["language"] = "zh_cn";
+void Config::WriteDefaultConfig() {
+    config["language"] = "en_us";
     config["null"] = "null";
     config["null"] = "null";
     config["null"] = "null";
 
     // 保存配置信息到文件
-    SaveConfig(GetConfigFileName());
+    SaveConfig("rino_config.ini");
+}
+
+// 读取配置文件设置
+std::string Config::ReadConfig(std::string name) {
+    // 从文件加载配置信息
+    LoadConfig("rino_config.ini");
+
+    return config[name];
 }
