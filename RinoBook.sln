@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedBaseLib", "SharedBase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rino.Versions", "src\SharedBaseLib\Rino.Versions\Rino.Versions.csproj", "{3E2B3CB4-9EAB-A7C9-C565-B2B7A11A6409}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rino.NewProject", "src\SharedBaseLib\Rino.NewProject\Rino.NewProject.csproj", "{A0B334BD-B436-02A9-7E07-3181BEF35FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rino.Utils", "src\SharedBaseLib\Rino.Utils\Rino.Utils.csproj", "{9605CE64-1277-A58C-144D-54989F4B60BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{3E2B3CB4-9EAB-A7C9-C565-B2B7A11A6409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E2B3CB4-9EAB-A7C9-C565-B2B7A11A6409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E2B3CB4-9EAB-A7C9-C565-B2B7A11A6409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B334BD-B436-02A9-7E07-3181BEF35FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B334BD-B436-02A9-7E07-3181BEF35FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B334BD-B436-02A9-7E07-3181BEF35FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B334BD-B436-02A9-7E07-3181BEF35FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9605CE64-1277-A58C-144D-54989F4B60BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9605CE64-1277-A58C-144D-54989F4B60BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9605CE64-1277-A58C-144D-54989F4B60BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9605CE64-1277-A58C-144D-54989F4B60BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +51,8 @@ Global
 		{CDDD417B-D563-ECF6-2CC6-0879374DA459} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{7687D335-1684-EE3E-B0B3-66D2279EDD65} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{3E2B3CB4-9EAB-A7C9-C565-B2B7A11A6409} = {65544B8E-27AB-48DE-B99E-C43E9C0764A3}
+		{A0B334BD-B436-02A9-7E07-3181BEF35FA4} = {65544B8E-27AB-48DE-B99E-C43E9C0764A3}
+		{9605CE64-1277-A58C-144D-54989F4B60BE} = {65544B8E-27AB-48DE-B99E-C43E9C0764A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CEBAC43-F8D6-4028-8CE6-822B71EA1651}

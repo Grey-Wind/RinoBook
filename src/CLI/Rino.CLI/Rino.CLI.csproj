@@ -29,6 +29,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SharedBaseLib\Rino.NewProject\Rino.NewProject.csproj" />
+    <ProjectReference Include="..\..\SharedBaseLib\Rino.Versions\Rino.Versions.csproj" />
     <ProjectReference Include="..\Rino.CLI.Help\Rino.CLI.Help.csproj" />
   </ItemGroup>
 
