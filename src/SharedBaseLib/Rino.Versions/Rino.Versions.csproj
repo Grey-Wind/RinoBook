@@ -11,6 +11,7 @@
 		<Authors>Grey-Wind</Authors>
 		<Company>Qing Yi Studio</Company>
 		<Copyright>Closed source, no commercial use</Copyright>
+		<AssemblyName>versions</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

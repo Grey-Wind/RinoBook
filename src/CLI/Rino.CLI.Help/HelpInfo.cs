@@ -35,7 +35,7 @@ namespace Rino.CLI.Help
             Console.WriteLine("rino help");
             Console.WriteLine("rino help <command>");
             Console.WriteLine();
-            Console.WriteLine($"npm@{RinoCliVerison}");
+            Console.WriteLine($"rino-cli@{RinoCliVerison}");
         }
     }
 }

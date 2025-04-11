@@ -8,22 +8,39 @@ namespace Rino.CLI
     {
         static void Main(string[] args)
         {
-            if (args.Length == 0)
+            switch (args.Length)
             {
-                // Show help command
-                HelpInfo.NoArguments();
+                case 0:
+                    // Show help command
+                    HelpInfo.NoArguments();
 #if DEBUG
-                Console.ReadKey();
+                    Console.ReadKey();
 #endif
-            }
-            else
-            {
-                string inputCommand = args[0].ToLower();
+                    break;
+                default:
+                    {
+                        string inputCommand = args[0].ToLower();
 
-                if (inputCommand == "-h" || inputCommand == "--help")
-                {
-                    HelpInfo.HelpCommand();
-                }
+                        switch (inputCommand)
+                        {
+                            case "-h":
+                            case "--help":
+                                HelpInfo.HelpCommand();
+                                break;
+                            case "-v":
+                            case "--version":
+                                Console.WriteLine($"rino-cli@{Versions.CLI.RinoCliVerison}");
+                                break;
+                            case "new":
+                                break;
+                            case "build":
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    }
             }
         }
     }
