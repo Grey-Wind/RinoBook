@@ -36,6 +36,7 @@ namespace Rino.CLI
                             case "build":
                                 break;
                             default:
+                                Error.UnknowCommand(inputCommand);
                                 break;
                         }
 
