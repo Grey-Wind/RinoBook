@@ -27,13 +27,20 @@ namespace Rino.CLI.Help
         /// </summary>
         public static void HelpCommand()
         {
-            Console.WriteLine("rino <command>");
-            Console.WriteLine();
-            Console.WriteLine("Usage:");
-            Console.WriteLine("rino new");
-            Console.WriteLine("rino build");
-            Console.WriteLine("rino help");
-            Console.WriteLine("rino help <command>");
+            string allText = @"
+rino <command>
+
+Usage:
+rino new
+rino build
+rino -v
+rino --verison
+rino -h
+rino -h <command>
+rino --help
+rino --help <command>
+";
+            Console.WriteLine(allText);
             Console.WriteLine();
             Console.WriteLine($"rino-cli@{RinoCliVerison}");
         }
