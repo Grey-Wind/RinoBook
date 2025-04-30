@@ -2,6 +2,6 @@
 {
     public class CLI
     {
-        public static string RinoCliVerison = "0.1.0";
+        public static readonly string RinoCliVerison = "0.1.0 alpha 1 - 20250501";
     }
 }
