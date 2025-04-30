@@ -53,53 +53,7 @@ namespace Rino.CLI
 
                 // 新建项目
                 case "new":
-                    try
-                    {
-                        if (args == null || args.Length < 2)
-                        {
-                            Error.WriteLine("The project name was not entered.");
-                        }
-                        else
-                        {
-                            string projectName = args[1].ToLower();
-                            string projectFolder;
-
-                            if (args.Length == 2)
-                            {
-                                projectFolder = Path.Join(Environment.CurrentDirectory, "projects");
-
-                                RinoProject rinoProject = new()
-                                {
-                                    ProjectName = projectName,
-                                    ProjectFolder = projectFolder
-                                };
-                                rinoProject.CreateProject();
-                            }
-                            else if (args.Length == 3)
-                            {
-                                projectFolder = args[2].ToLower();
-
-                                RinoProject rinoProject = new()
-                                {
-                                    ProjectName = projectName,
-                                    ProjectFolder = projectFolder
-                                };
-                                rinoProject.CreateProject();
-                            }
-                            else if(args.Length > 3)
-                            {
-                                Error.WriteLine("The number of parameters is incorrect.");
-                            }
-                            else
-                            {
-                                Error.WriteLine("Abnormal error. Please report to the developer.");
-                            }
-                        }
-                    }
-                    catch (ArgumentNullException rnnane)
-                    {
-                        Error.WriteLine(rnnane.Message);
-                    }
+                    NewRinoProject(args);
                     break;
 
                 // 构建项目
@@ -114,48 +68,63 @@ namespace Rino.CLI
             }
         }
 
-        private static void BuildRinoProject(string[] args)
+        private static void NewRinoProject(string[] args)
         {
-            throw new NotImplementedException();
-        }
-
-        private static void CreateNewProject(string pName, string pFolder)
-        {
-            string projectName;
-            string projectFolder;
-
-            if (string.IsNullOrWhiteSpace(pName))
+            try
             {
-                throw new ArgumentNullException(paramName: "Project name",
-                                                message: "The project name was not entered.");
-            }
-            else
-            {
-                projectName = pName;
-
-                if (string.IsNullOrWhiteSpace(pFolder))
+                if (args != null && args.Length >= 2)
                 {
-                    projectFolder = Path.Join(Environment.CurrentDirectory, "projects");
+                    string projectName = args[1].ToLower();
+                    string projectFolder;
+                    RinoProject rino;
 
-                    RinoProject rinoProject = new()
+                    switch (args.Length)
                     {
-                        ProjectName = projectName,
-                        ProjectFolder = projectFolder
-                    };
-                    rinoProject.CreateProject();
+                        case 2:
+                            projectFolder = Path.Join(Environment.CurrentDirectory, "projects");
+
+                            rino = new()
+                            {
+                                ProjectName = projectName,
+                                ProjectFolder = projectFolder
+                            };
+                            rino.CreateProject();
+                            break;
+
+                        case 3:
+                            projectFolder = args[2].ToLower();
+
+                            rino = new()
+                            {
+                                ProjectName = projectName,
+                                ProjectFolder = projectFolder
+                            };
+                            rino.CreateProject();
+                            break;
+
+                        case > 3:
+                            Error.WriteLine("The number of parameters is incorrect.");
+                            break;
+
+                        default:
+                            Error.WriteLine("Abnormal error. Please report to the developer.");
+                            break;
+                    }
                 }
                 else
                 {
-                    projectFolder = pFolder;
-
-                    RinoProject rinoProject = new()
-                    {
-                        ProjectName = projectName,
-                        ProjectFolder = projectFolder
-                    };
-                    rinoProject.CreateProject();
+                    Error.WriteLine("The project name was not entered.");
                 }
             }
+            catch (ArgumentNullException rnnane)
+            {
+                Error.WriteLine(rnnane.Message);
+            }
+        }
+
+        private static void BuildRinoProject(string[] args)
+        {
+            throw new NotImplementedException();
         }
     }
 }
