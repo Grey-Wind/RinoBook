@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using Rino.CLI.Help;
 using Rino.NewProject;
-using Rino.Utils;
 
 namespace Rino.CLI
 {
@@ -25,11 +23,9 @@ namespace Rino.CLI
         }
 
         // 无输入参数方法 不做改动
-        static void Arguments0()
-        {
+        static void Arguments0() =>
             // Show help command
             HelpInfo.NoArguments();
-        }
 
         // 处理输入参数的方法
         static void ProcessInputCommand(string[] args)
@@ -113,9 +109,17 @@ namespace Rino.CLI
                     Error.WriteLine("The project name was not entered.");
                 }
             }
-            catch (ArgumentNullException rnnane)
+            catch (ArgumentNullException rnnane) // rnnane => rino new ArgumentNullException
             {
                 Error.WriteLine(rnnane.Message);
+            }
+            catch (IOException rnnioe)
+            {
+                Error.WriteLine(rnnioe.Message);
+            }
+            catch (Exception rnne)
+            {
+                Error.WriteLine(rnne.Message);
             }
         }
 

@@ -24,7 +24,14 @@ namespace Rino.NewProject
             // 创建项目文件夹
             try
             {
-                Folder.CreateFolder(ProjectFolder, ProjectName);
+                if (Folder.CreateFolder(ProjectFolder, ProjectName) == true)
+                {
+                    // TODO
+                }
+                else
+                {
+                    throw new IOException("The folder creation failed. It might be that there are already duplicate folders.");
+                }
             }
             catch (IOException cfioe)
             {

@@ -10,7 +10,8 @@ namespace Rino.Utils
         /// </summary>
         /// <param name="path">创建文件夹的路径（不包含名称）</param>
         /// <param name="folderName">创建的文件夹的名称</param>
-        public static void CreateFolder(string path, string folderName)
+        /// <returns>是否成功创建</returns>
+        public static bool CreateFolder(string path, string folderName)
         {
             try
             {
@@ -18,7 +19,9 @@ namespace Rino.Utils
                 if (!Directory.Exists(fullPath))
                 {
                     Directory.CreateDirectory(fullPath);
+                    return true;
                 }
+                return false;
             }
             catch (Exception ex)
             {
