@@ -29,9 +29,6 @@ namespace Rino.CLI
         {
             // Show help command
             HelpInfo.NoArguments();
-#if DEBUG
-            Console.ReadKey();
-#endif
         }
 
         // 处理输入参数的方法
