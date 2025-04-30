@@ -31,7 +31,8 @@ namespace Rino.CLI.Help
 rino <command>
 
 Usage:
-rino new
+rino new <project name>
+rino new <project name> <project path>
 rino build
 rino -v
 rino --verison

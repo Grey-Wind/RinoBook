@@ -1,4 +1,8 @@
-﻿namespace Rino.NewProject
+﻿using System;
+using System.IO;
+using Rino.Utils;
+
+namespace Rino.NewProject
 {
     /// <summary>
     /// 创建一个新的小说项目。
@@ -17,7 +21,19 @@
 
         public void CreateProject()
         {
-            //
+            // 创建项目文件夹
+            try
+            {
+                Folder.CreateFolder(ProjectFolder, ProjectName);
+            }
+            catch (IOException cfioe)
+            {
+                throw new IOException(cfioe.Message);
+            }
+            catch (Exception cfe)
+            {
+                throw new Exception(cfe.Message);
+            }
         }
     }
 }

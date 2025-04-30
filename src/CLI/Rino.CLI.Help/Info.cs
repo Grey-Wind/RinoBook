@@ -5,26 +5,18 @@ namespace Rino.CLI.Help
     /// <summary>
     /// 输出错误的类
     /// </summary>
-    public class Error : IPrint
+    public class Info : IPrint
     {
-        public static void UnknowCommand(string command)
-        {
-            Write("Unknow command ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(command);
-            Console.ResetColor();
-        }
-
         public static void Write(string text)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(text);
             Console.ResetColor();
 
         }
         public static void WriteLine(string text)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(text);
             Console.ResetColor();
         }
